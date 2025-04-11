@@ -7,5 +7,8 @@ const ej01 = require("./src/modules/EJ01");
 
 ej01('Juan', 'Pepe');
 
-console.log("suma: " + sumar(2, 3))
-console.log("resta: " + restar("2", 3))
+console.log("suma: " + sumar(2, 3));
+console.log("resta: " + restar("2", 3));
+console.log("multiplicación: " + multiplicar(2, "3"));
+console.log("división: " + dividir("2", "3"));
+
