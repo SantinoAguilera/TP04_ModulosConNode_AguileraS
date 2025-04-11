@@ -1,0 +1,23 @@
+const axios = require('axios');
+
+async function obtenerMoneda(codigoPais) {
+    try {
+        const respuesta = await axios.get(`https://restcountries.com/v3.1/alpha/${codigoPais}`);
+
+        const pais = respuesta.data[0];
+        
+        if (pais.currencies) {
+            const moneda = pais.currencies[Object.keys(pais.currencies)[0]].name;
+            return moneda;
+        } else {
+            console.error("Error: El país no tiene una moneda registrada.");
+            return null;
+        }
+    } catch (error) {
+        console.error("Error: No se pudo obtener la moneda.");
+        console.error(error.message);
+        return null;
+    }
+}
+
+module.exports = obtenerMoneda;

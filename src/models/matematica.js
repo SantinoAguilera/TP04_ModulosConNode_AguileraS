@@ -1,30 +1,33 @@
 const pi = Math.PI;
 
 const sumar = (num1, num2) =>
-{
-    if (!Number.isNaN(num1) && !Number.isNaN(num2)) return num1 + num2;
-    else return "Error, introduzca numeros.";
-}
+    {
+        if (!isNaN(Number(num1)) && !isNaN(Number(num2))) return Number(num1) + Number(num2);
+        else return "Error, introduzca números.";
+    }
+    
+    const restar = (num1, num2) =>
+    {
+        if (!isNaN(Number(num1)) && !isNaN(Number(num2))) return Number(num1) - Number(num2);
+        else return "Error, introduzca números.";
+    }
+    
+    function multiplicar(num1, num2)
+    {
+        if (!isNaN(Number(num1)) && !isNaN(Number(num2))) return Number(num1) * Number(num2);
+        else return "Error, introduzca números.";
+    }
+    
+    function dividir(num1, num2)
+    {
+        if (!isNaN(Number(num1)) && !isNaN(Number(num2))) return Number(num1) / Number(num2);
+        else return "Error, introduzca números.";
+    }
 
-const restar = (num1, num2) =>
-{
-    if (!Number.isNaN(num1) && !Number.isNaN(num2)) return num1 - num2;
-    else return "Error, introduzca numeros.";
-}
-
-function multiplicar(num1, num2)
-{
-    if (!Number.isNaN(num1) && !Number.isNaN(num2)) return num1 * num2;
-    else return "Error, introduzca numeros.";
-}
-
-function dividir(num1, num2)
-{
-    if (!Number.isNaN(num1) && !Number.isNaN(num2)) return num1 / num2;
-    else return "Error, introduzca numeros.";
-}
-
-module.exports = sumar;
-module.exports = restar;
-module.exports = multiplicar;
-module.exports = dividir;
+module.exports = {
+    pi,
+    sumar,
+    restar,
+    multiplicar,
+    dividir
+};
